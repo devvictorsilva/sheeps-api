@@ -22,7 +22,7 @@ import { AuthModule } from './modules/auth/auth.module';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
-        entities: ['src/**/*.entity.ts'],
+        entities: [__dirname + '/**/*.entity.{js,ts}'],
         migrations: [__dirname + '/database/migration/**/*{.js,.ts}'],
         synchronize: true,
       }),
