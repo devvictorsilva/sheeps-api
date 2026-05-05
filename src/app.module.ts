@@ -22,7 +22,8 @@ import { AuthModule } from './modules/auth/auth.module';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
-        entities: [],
+        entities: ['src/**/*.entity.ts'],
+        migrations: [__dirname + '/database/migration/**/*{.js,.ts}'],
         synchronize: true,
       }),
       dataSourceFactory: async (options) => {
